@@ -15,7 +15,7 @@ A polished web app that creates funny, personalized, non-offensive roasts based 
 
 ## Tech Stack
 
-- **Frontend**: Next.js 14 (App Router) + Tailwind CSS v4
+- **Frontend**: Next.js 16 (App Router) + Tailwind CSS v4
 - **UI Components**: shadcn/ui + Radix UI
 - **AI**: OpenAI API (GPT-4o mini)
 - **Storage**: LocalStorage
