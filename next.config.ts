@@ -5,7 +5,7 @@ const pagesBasePath = process.env.PAGES_BASE_PATH;
 
 const nextConfig: NextConfig = {
   output: isGithubPagesBuild ? "export" : undefined,
-  basePath: pagesBasePath || undefined,
+  basePath: pagesBasePath,
   trailingSlash: true,
 };
 
