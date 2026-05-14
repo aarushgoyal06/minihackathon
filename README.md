@@ -75,6 +75,14 @@ npm start
 3. Add `OPENAI_API_KEY` in Vercel Environment Variables
 4. Deploy!
 
+### GitHub Pages
+
+1. In GitHub, go to **Settings → Pages** and set **Source** to **GitHub Actions**
+2. Push to `main` (or run the **Deploy to GitHub Pages** workflow manually)
+3. Wait for the workflow to finish, then open your Pages URL
+
+> Note: GitHub Pages hosts static files only. This app's `/api/roast` server route requires a Node.js runtime and won't run on Pages.
+
 ## Usage
 
 1. Fill in your profile (at least one field required)
