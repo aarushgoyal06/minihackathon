@@ -1,0 +1,141 @@
+@import "tailwindcss";
+
+:root {
+  --background: #08080f;
+  --foreground: #f0f0ff;
+  --neon-purple: #a855f7;
+  --neon-pink: #ec4899;
+  --neon-cyan: #06b6d4;
+  --neon-green: #22c55e;
+  --card-bg: #0f0f1e;
+  --card-border: #1e1e3a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+/* Neon glow animations */
+@keyframes neon-pulse {
+  0%, 100% { text-shadow: 0 0 8px var(--neon-purple), 0 0 20px var(--neon-purple), 0 0 40px var(--neon-purple); }
+  50% { text-shadow: 0 0 4px var(--neon-purple), 0 0 10px var(--neon-purple), 0 0 20px var(--neon-purple); }
+}
+
+@keyframes cooking-dots {
+  0% { content: ""; }
+  25% { content: "."; }
+  50% { content: ".."; }
+  75% { content: "..."; }
+  100% { content: ""; }
+}
+
+@keyframes slide-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.neon-title {
+  animation: neon-pulse 2s ease-in-out infinite;
+}
+
+.slide-in {
+  animation: slide-in 0.4s ease-out forwards;
+}
+
+.fade-in {
+  animation: fade-in 0.3s ease-out forwards;
+}
+
+.neon-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.1), inset 0 0 20px rgba(168, 85, 247, 0.03);
+}
+
+.neon-card:hover {
+  border-color: rgba(168, 85, 247, 0.3);
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.2), inset 0 0 30px rgba(168, 85, 247, 0.05);
+  transition: all 0.3s ease;
+}
+
+.neon-input {
+  background: #0a0a18 !important;
+  border-color: #1e1e3a !important;
+  color: #f0f0ff !important;
+}
+
+.neon-input:focus {
+  border-color: var(--neon-purple) !important;
+  box-shadow: 0 0 0 2px rgba(168, 85, 247, 0.2) !important;
+  outline: none !important;
+}
+
+.neon-input::placeholder {
+  color: #4a4a6a !important;
+}
+
+.intensity-btn {
+  transition: all 0.2s ease;
+}
+
+.intensity-btn:hover {
+  transform: translateY(-1px);
+}
+
+.roast-line {
+  animation: slide-in 0.4s ease-out forwards;
+  border-left: 3px solid var(--neon-purple);
+}
+
+.mic-drop {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.15), rgba(236, 72, 153, 0.15));
+  border: 1px solid rgba(236, 72, 153, 0.3);
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.1);
+}
+
+.cooking-text::after {
+  content: "";
+  animation: cooking-dots 1.2s steps(4) infinite;
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, var(--neon-purple), var(--neon-pink), var(--neon-cyan), var(--neon-purple));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--card-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a4a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-purple);
+}
